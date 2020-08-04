@@ -214,7 +214,7 @@ class BackgroundCountdown extends BaseCountdown {
             default:
             case 1:
                 // center
-                ret = topPaddingSize + mTimeBgSize - mTimeBgSize / 2  + tempRect.height() / 2 + mTimeBgBorderSize;
+                ret = topPaddingSize + mTimeBgBorderSize + mTimeBgSize / 2 - tempRect.bottom + tempRect.height() / 2;
                 break;
             case 2:
                 // bottom
