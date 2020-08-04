@@ -57,7 +57,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="20dp"
             app:isHideTimeBackground="false"
-            app:timeDayTextColor="#FC903E"
+            app:timeDayTextColor="#333333"
             app:isShowDay="true"
             app:isShowHour="true"
             app:suffixDayLeftMargin="0dp"
@@ -72,15 +72,15 @@
             app:suffixLRMargin="5dp"
             app:suffixMinute=":"
             app:suffixSecond=":"
-            app:suffixTextColor="#FC903E"
+            app:suffixTextColor="#333333"
             app:suffixTextSize="16sp"
-            app:timeBgBorderColor="#FA2F23"
+            app:timeBgBorderColor="#333333"
             app:timeBgBorderRadius="3dp"
             app:timeBgBorderSize="1dp"
-            app:timeBgColor="#FFFFFF"
+            app:timeBgColor="#333333"
             app:timeBgRadius="3dp"
             app:timeBgSize="24dp"
-            app:timeTextColor="#FA2F23"
+            app:timeTextColor="#FFFFFF"
             app:timeTextSize="14sp" />
 
         <cn.iwgang.countdownview.CountdownView

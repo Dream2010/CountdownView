@@ -327,7 +327,7 @@ class BackgroundCountdown extends BaseCountdown {
                     mDayTextCenterX = mDayBgRectF.right - mDayText.length() * (mTimeTextWidth / 2) * 0.5f;
                 }
             }
-            if (isDrawBg) {
+            if (isDrawBg && isShowDayTimeBgBorder) {
                 // draw day background
                 canvas.drawRoundRect(mDayBgRectF, mTimeBgRadius, mTimeBgRadius, mTimeBgPaint);
                 if (isShowTimeBgDivisionLine) {
