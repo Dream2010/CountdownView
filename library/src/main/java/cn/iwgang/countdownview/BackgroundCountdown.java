@@ -32,7 +32,7 @@ class BackgroundCountdown extends BaseCountdown {
     private RectF mDayBgBorderRectF, mHourBgBorderRectF, mMinuteBgBorderRectF, mSecondBgBorderRectF, mMillisecondBgBorderRectF;
     private float mTimeBgDivisionLineYPos;
     private float mTimeTextBaseY;
-    private boolean isShowTimeBgBorder;
+    private boolean isShowTimeBgBorder, isShowDayTimeBgBorder;
     private float mTimeBgBorderSize;
     private float mTimeBgBorderRadius;
     private int mTimeBgBorderColor;
@@ -52,6 +52,7 @@ class BackgroundCountdown extends BaseCountdown {
         mTimeBgBorderRadius = ta.getDimension(R.styleable.CountdownView_timeBgBorderRadius, 0);
         mTimeBgBorderColor = ta.getColor(R.styleable.CountdownView_timeBgBorderColor, 0xFF000000);
         isShowTimeBgBorder = ta.getBoolean(R.styleable.CountdownView_isShowTimeBgBorder, false);
+        isShowDayTimeBgBorder = ta.getBoolean(R.styleable.CountdownView_isShowDayTimeBgBorder, isShowTimeBgBorder);
 
         isDrawBg = ta.hasValue(R.styleable.CountdownView_timeBgColor) || !isShowTimeBgBorder;
     }
@@ -312,9 +313,17 @@ class BackgroundCountdown extends BaseCountdown {
         float mSecondLeft;
 
         if (isShowDay) {
+            float mDayTextCenterX = mDayBgRectF.centerX();
+            String mDayText = Utils.formatNum(mDay);
+
             // draw day background border
             if (isShowTimeBgBorder) {
-                canvas.drawRoundRect(mDayBgBorderRectF, mTimeBgBorderRadius, mTimeBgBorderRadius, mTimeBgBorderPaint);
+                if (isShowDayTimeBgBorder) {
+                    canvas.drawRoundRect(mDayBgBorderRectF, mTimeBgBorderRadius, mTimeBgBorderRadius, mTimeBgBorderPaint);
+                 } else {
+                    mDayText = String.valueOf(mDay);
+                    mDayTextCenterX = mDayBgRectF.right - mDayText.length() * (mTimeTextWidth / 2) * 0.5f;
+                }
             }
             if (isDrawBg) {
                 // draw day background
@@ -325,7 +334,8 @@ class BackgroundCountdown extends BaseCountdown {
                 }
             }
             // draw day text
-            canvas.drawText(Utils.formatNum(mDay), mDayBgRectF.centerX(), mTimeTextBaseY, mTimeTextPaint);
+            canvas.drawText(mDayText, mDayTextCenterX, mTimeTextBaseY, mTimeTextPaint);
+
             if (mSuffixDayTextWidth > 0) {
                 // draw day suffix
                 canvas.drawText(mSuffixDay, mLeftPaddingSize + mDayTimeBgWidth + mSuffixDayLeftMargin + (mTimeBgBorderSize * 2), mSuffixDayTextBaseline, mSuffixTextPaint);

@@ -1,5 +1,4 @@
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -28,7 +27,7 @@
             app:suffixTextSize="20sp"
             app:timeBgColor="#FF5000"
             app:timeTextColor="#FFFFFF"
-            app:timeTextSize="20sp"/>
+            app:timeTextSize="20sp" />
 
         <cn.iwgang.countdownview.CountdownView
             android:id="@+id/cv_countdownViewTest2"
@@ -49,7 +48,7 @@
             app:timeBgRadius="3dp"
             app:timeBgSize="50dp"
             app:timeTextColor="#FFFFFF"
-            app:timeTextSize="30sp"/>
+            app:timeTextSize="30sp" />
 
         <cn.iwgang.countdownview.CountdownView
             android:id="@+id/cv_countdownViewTest211"
@@ -58,25 +57,30 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="20dp"
             app:isHideTimeBackground="false"
-            app:isShowDay="false"
-            app:isShowHour="false"
+            app:isShowDay="true"
+            app:isShowHour="true"
+            app:suffixDayLeftMargin="0dp"
             app:isShowMillisecond="true"
             app:isShowMinute="true"
             app:isShowSecond="true"
             app:isShowTimeBgBorder="true"
+            app:suffixDay="天"
+            app:isShowDayTimeBgBorder="false"
             app:suffixGravity="center"
+            app:suffixHour=":"
             app:suffixLRMargin="5dp"
+            app:suffixMinute=":"
+            app:suffixSecond=":"
             app:suffixTextColor="#FC903E"
-            app:suffixTextSize="17sp"
-            app:timeBgBorderColor="#E8E8E8"
+            app:suffixTextSize="16sp"
+            app:timeBgBorderColor="#FA2F23"
             app:timeBgBorderRadius="3dp"
-            app:timeBgBorderSize="2dp"
+            app:timeBgBorderSize="1dp"
             app:timeBgColor="#FFFFFF"
-            app:timeBgDivisionLineSize="1dp"
             app:timeBgRadius="3dp"
-            app:timeBgSize="30dp"
-            app:timeTextColor="#FC903E"
-            app:timeTextSize="17sp"/>
+            app:timeBgSize="24dp"
+            app:timeTextColor="#FA2F23"
+            app:timeTextSize="14sp" />
 
         <cn.iwgang.countdownview.CountdownView
             android:id="@+id/cv_countdownViewTest21"
@@ -99,7 +103,7 @@
             app:timeBgRadius="22.5dp"
             app:timeBgSize="45dp"
             app:timeTextColor="#FFFFFF"
-            app:timeTextSize="25sp"/>
+            app:timeTextSize="25sp" />
 
         <cn.iwgang.countdownview.CountdownView
             android:id="@+id/cv_countdownViewTest22"
@@ -121,7 +125,7 @@
             app:suffixTextColor="#444444"
             app:suffixTextSize="20sp"
             app:timeTextColor="#444444"
-            app:timeTextSize="60sp"/>
+            app:timeTextSize="60sp" />
 
         <cn.iwgang.countdownview.CountdownView
             android:id="@+id/cv_countdownViewTest3"
@@ -138,7 +142,7 @@
             app:suffixTextColor="#000000"
             app:suffixTextSize="17sp"
             app:timeTextColor="#000000"
-            app:timeTextSize="20sp"/>
+            app:timeTextSize="20sp" />
 
         <cn.iwgang.countdownview.CountdownView
             android:id="@+id/cv_countdownViewTest4"
@@ -161,7 +165,7 @@
             app:suffixTextColor="#000000"
             app:suffixTextSize="12sp"
             app:timeTextColor="#000000"
-            app:timeTextSize="22sp"/>
+            app:timeTextSize="22sp" />
 
         <cn.iwgang.countdownview.CountdownView
             android:id="@+id/cv_convertDaysToHours"
@@ -185,7 +189,7 @@
             app:suffixTextColor="#000000"
             app:suffixTextSize="12sp"
             app:timeTextColor="#000000"
-            app:timeTextSize="22sp"/>
+            app:timeTextSize="22sp" />
 
         <cn.iwgang.countdownview.CountdownView
             android:id="@+id/cv_countdownViewTest5"
@@ -206,7 +210,7 @@
             app:suffixTextColor="#000000"
             app:suffixTextSize="12sp"
             app:timeTextColor="#000000"
-            app:timeTextSize="22sp"/>
+            app:timeTextSize="22sp" />
 
         <cn.iwgang.countdownview.CountdownView
             android:id="@+id/cv_countdownViewTest6"
@@ -224,7 +228,7 @@
             app:suffixTextColor="#000000"
             app:suffixTextSize="20sp"
             app:timeTextColor="#000000"
-            app:timeTextSize="20sp"/>
+            app:timeTextSize="20sp" />
 
 
         <LinearLayout
@@ -238,20 +242,20 @@
                 android:layout_width="0dp"
                 android:layout_height="0.5dp"
                 android:layout_weight="1"
-                android:background="#999999"/>
+                android:background="#999999" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:text="Other Activity"
-                android:textColor="#000000"/>
+                android:textColor="#000000" />
 
             <View
                 android:layout_width="0dp"
                 android:layout_height="0.5dp"
                 android:layout_weight="1"
-                android:background="#999999"/>
+                android:background="#999999" />
 
         </LinearLayout>
 
@@ -267,7 +271,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="DynamicShow"/>
+                android:text="DynamicShow" />
 
             <Button
                 android:id="@+id/btn_toListViewActivity"
@@ -275,7 +279,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="ListView"/>
+                android:text="ListView" />
 
             <Button
                 android:id="@+id/btn_toRecyclerViewActivity"
@@ -283,7 +287,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="RecyclerView"/>
+                android:text="RecyclerView" />
 
         </LinearLayout>
 
