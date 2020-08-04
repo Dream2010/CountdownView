@@ -36,6 +36,7 @@ class BackgroundCountdown extends BaseCountdown {
     private float mTimeBgBorderSize;
     private float mTimeBgBorderRadius;
     private int mTimeBgBorderColor;
+    private int mTimeDayTextColor;
 
     @Override
     public void initStyleAttr(Context context, TypedArray ta) {
@@ -53,6 +54,7 @@ class BackgroundCountdown extends BaseCountdown {
         mTimeBgBorderColor = ta.getColor(R.styleable.CountdownView_timeBgBorderColor, 0xFF000000);
         isShowTimeBgBorder = ta.getBoolean(R.styleable.CountdownView_isShowTimeBgBorder, false);
         isShowDayTimeBgBorder = ta.getBoolean(R.styleable.CountdownView_isShowDayTimeBgBorder, isShowTimeBgBorder);
+        mTimeDayTextColor = ta.getColor(R.styleable.CountdownView_timeDayTextColor, mTimeTextColor);
 
         isDrawBg = ta.hasValue(R.styleable.CountdownView_timeBgColor) || !isShowTimeBgBorder;
     }
@@ -334,7 +336,13 @@ class BackgroundCountdown extends BaseCountdown {
                 }
             }
             // draw day text
-            canvas.drawText(mDayText, mDayTextCenterX, mTimeTextBaseY, mTimeTextPaint);
+            if (mTimeDayTextColor != mTimeTextColor) {
+                mTimeTextPaint.setColor(mTimeDayTextColor);
+                canvas.drawText(mDayText, mDayTextCenterX, mTimeTextBaseY, mTimeTextPaint);
+                mTimeTextPaint.setColor(mTimeTextColor);
+            } else {
+                canvas.drawText(mDayText, mDayTextCenterX, mTimeTextBaseY, mTimeTextPaint);
+            }
 
             if (mSuffixDayTextWidth > 0) {
                 // draw day suffix

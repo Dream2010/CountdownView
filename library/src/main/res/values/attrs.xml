@@ -13,6 +13,7 @@
         <attr name="isTimeTextBold" format="boolean" />
         <attr name="timeTextSize" format="dimension" />
         <attr name="timeTextColor" format="color" />
+        <attr name="timeDayTextColor" format="color"/>
         <attr name="isShowDay" format="boolean" />
         <attr name="isShowHour" format="boolean" />
         <attr name="isShowMinute" format="boolean" />

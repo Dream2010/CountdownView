@@ -41,7 +41,7 @@ class BaseCountdown {
     private boolean hasSetSuffixDay, hasSetSuffixHour, hasSetSuffixMinute, hasSetSuffixSecond, hasSetSuffixMillisecond;
     private boolean hasCustomSomeSuffix;
     private float mSuffixLRMargin;
-    private int mTimeTextColor;
+    protected int mTimeTextColor;
     private float mTimeTextSize;
     private boolean isTimeTextBold;
     private int mSuffixTextColor;

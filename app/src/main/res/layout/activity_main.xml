@@ -57,6 +57,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="20dp"
             app:isHideTimeBackground="false"
+            app:timeDayTextColor="#FC903E"
             app:isShowDay="true"
             app:isShowHour="true"
             app:suffixDayLeftMargin="0dp"
