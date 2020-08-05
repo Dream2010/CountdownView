@@ -16,7 +16,21 @@ Android倒计时控件，使用Canvas绘制，支持多种样式
 <img src="https://raw.githubusercontent.com/Dream2010/CountdownView/master/screenshot/s_list.jpg" width="400px" height="650px"/>
 
 ### Gradle
-    compile 'com.github.iwgang:countdownview:2.1.6'
+
+Step 1. Add the JitPack repository to your build file
+```gradle
+allprojects {
+    repositories {
+        ...
+        maven { url 'https://jitpack.io' }
+    }
+}
+```
+
+Step 2. Add the dependency
+```gradle
+implementation 'com.github.Dream2010:CountdownView:3.0.0'
+```
 
 ### Code
 ```
