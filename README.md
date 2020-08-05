@@ -5,7 +5,7 @@
 # CountdownView
 Android倒计时控件，使用Canvas绘制，支持多种样式
 
-[Change Log](https://github.com/onevcat/Kingfisher/blob/master/CHANGELOG.md)
+[Change Log](https://github.com/Dream2010/CountdownView/blob/master/CHANGELOG.md)
 
 ### Screenshot
 <img src="https://raw.githubusercontent.com/Dream2010/CountdownView/master/screenshot/s_main.png" width="400px" height="650px"/>
