@@ -2,4 +2,4 @@
 
 1. 新增样式  <img src="https://raw.githubusercontent.com/Dream2010/CountdownView/master/screenshot/newstyle_1.png" width="146px" height="21px"/>
 2. 修复 `suffix` 为中文时显示不居中问题
-3. 倒计时过程中天数为0时隐藏
+3. 调整倒计时过程中 天数变为0时 将其隐藏
