@@ -2,21 +2,18 @@
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-CountdownView-brightgreen.svg?style=flat)](http://android-arsenal.com/details/1/2641) 
 [![@iwgang](https://img.shields.io/badge/weibo-%40iwgang-blue.svg)](http://weibo.com/iwgang)
 
-#### [中文](https://github.com/iwgang/CountdownView/blob/master/README_CN.md)
-
-
 # CountdownView
-Android countdown view，use canvas draw，supports multiple styles
+Android倒计时控件，使用Canvas绘制，支持多种样式
 
-[Download demo apk](https://raw.githubusercontent.com/iwgang/CountdownView/master/demoapk/Demo_2.1.apk)
+[Change Log](https://github.com/onevcat/Kingfisher/blob/master/CHANGELOG.md)
 
 ### Screenshot
-<img src="https://raw.githubusercontent.com/iwgang/CountdownView/master/screenshot/s_main.png" width="400px" height="650px"/>
+<img src="https://raw.githubusercontent.com/Dream2010/CountdownView/master/screenshot/s_main.png" width="400px" height="650px"/>
 
-![](https://raw.githubusercontent.com/iwgang/CountdownView/master/screenshot/g_config.gif) 
-![](https://raw.githubusercontent.com/iwgang/CountdownView/master/screenshot/g_config2.gif)  
+![](https://raw.githubusercontent.com/Dream2010/CountdownView/master/screenshot/g_config.gif)
+![](https://raw.githubusercontent.com/Dream2010/CountdownView/master/screenshot/g_config2.gif)
 
-<img src="https://raw.githubusercontent.com/iwgang/CountdownView/master/screenshot/s_list.jpg" width="400px" height="650px"/>
+<img src="https://raw.githubusercontent.com/Dream2010/CountdownView/master/screenshot/s_list.jpg" width="400px" height="650px"/>
 
 ### Gradle
     compile 'com.github.iwgang:countdownview:2.1.6'
@@ -24,9 +21,9 @@ Android countdown view，use canvas draw，supports multiple styles
 ### Code
 ```
 CountdownView mCvCountdownView = (CountdownView)findViewById(R.id.cv_countdownViewTest1);
-mCvCountdownView.start(995550000); // Millisecond
+mCvCountdownView.start(995550000); // 毫秒
 
-// or
+// 或者自己编写倒计时逻辑，然后调用updateShow来更新UI
 for (int time=0; time<1000; time++) {
     mCvCountdownView.updateShow(time);
 }
@@ -55,9 +52,9 @@ for (int time=0; time<1000; time++) {
     app:suffixMillisecond="毫秒" />
 ```
 
-### Customization
-| attr | type | default|
-| --------   | :-----:  | :----: |
+### 定制
+|    参数    |   类型   |  默认值 |
+| --------   | :-----:  | :----:  |
 |isHideTimeBackground | boolean | true|
 |timeBgColor  | color      | #444444|
 |timeBgSize   | dimension  | timeSize + 2dp * 4|
@@ -65,11 +62,11 @@ for (int time=0; time<1000; time++) {
 |isShowTimeBgDivisionLine | boolean  | true|
 |timeBgDivisionLineColor | color | #30FFFFFF|
 |timeBgDivisionLineSize  | dimension | 0.5dp|
-|timeTextSize   | dimension | 12sp | 
+|timeTextSize   | dimension | 12sp |
 |timeTextColor  | color | #000000|
 |isTimeTextBold | boolean | false|
-|isShowDay  | boolean | auto show (has value show if not hide)|
-|isShowHour  | boolean | auto show (has value show if not hide)|
+|isShowDay  | boolean | 自动显示 (天 > 1 显示, = 0 隐藏)|
+|isShowHour  | boolean | 自动显示 (小时 > 1 显示， = 0 隐藏)|
 |isShowMinute  | boolean | true|
 |isShowSecond  | boolean | true|
 |isShowMillisecond  | boolean | false|
@@ -99,12 +96,12 @@ for (int time=0; time<1000; time++) {
 |timeBgBorderSize  | dimension | 1dp|
 |timeBgBorderRadius  | dimension | 0|
 
-### Other
-* **Multiple countdownView specified value**
+### 其它
+* **多个CountdownView时，给每个指定值**
 ```
-    // step 1
+    // 第1步，设置tag
     mCvCountdownView.setTag(R.id.name, uid);
-    // step 2
+    // 第2步，从回调中的CountdownView取回tag
     @Override
     public void onEnd(CountdownView cv) {
         Object nameTag = cv.getTag(R.id.uid);
@@ -113,15 +110,15 @@ for (int time=0; time<1000; time++) {
         }
     }
 ```
-* **Dynamic show**
+* **动态显示设置, 支持所有xml中的配置项来使用java代码设置**
 ```
     dynamicShow(DynamicConfig dynamicConfig)
 ```
-* **Countdown complete callback**
+* **倒计时结束后回调**
 ```
     setOnCountdownEndListener(OnCountdownEndListener onCountdownEndListener);
 ```
-* **Interval callback**
+* **指定间隔时间回调**
 ```
     setOnCountdownIntervalListener(long interval, OnCountdownIntervalListener onCountdownIntervalListener);
 ```
