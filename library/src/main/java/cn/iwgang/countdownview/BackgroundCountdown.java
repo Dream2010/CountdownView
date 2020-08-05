@@ -327,21 +327,30 @@ class BackgroundCountdown extends BaseCountdown {
                     mDayTextCenterX = mDayBgRectF.right - mDayText.length() * (mTimeTextWidth / 2) * 0.5f;
                 }
             }
-            if (isDrawBg && isShowDayTimeBgBorder) {
+            if (isDrawBg) {
                 // draw day background
+                boolean notOnlyShowDayTimeBorder = isShowTimeBgBorder && !isShowDayTimeBgBorder;
+                if (notOnlyShowDayTimeBorder) {
+                    mTimeBgPaint.setColor(Color.TRANSPARENT);
+                }
                 canvas.drawRoundRect(mDayBgRectF, mTimeBgRadius, mTimeBgRadius, mTimeBgPaint);
+                if (notOnlyShowDayTimeBorder) {
+                    mTimeBgPaint.setColor(mTimeBgColor);
+                }
+
                 if (isShowTimeBgDivisionLine) {
                     // draw day background division line
                     canvas.drawLine(mLeftPaddingSize + mTimeBgBorderSize, mTimeBgDivisionLineYPos, mLeftPaddingSize + mDayTimeBgWidth + mTimeBgBorderSize, mTimeBgDivisionLineYPos, mTimeBgDivisionLinePaint);
                 }
             }
             // draw day text
-            if (mTimeDayTextColor != mTimeTextColor) {
+            boolean hasCustomDayTimeColor = mTimeDayTextColor != mTimeTextColor;
+            if (hasCustomDayTimeColor) {
                 mTimeTextPaint.setColor(mTimeDayTextColor);
-                canvas.drawText(mDayText, mDayTextCenterX, mTimeTextBaseY, mTimeTextPaint);
+            }
+            canvas.drawText(mDayText, mDayTextCenterX, mTimeTextBaseY, mTimeTextPaint);
+            if (hasCustomDayTimeColor) {
                 mTimeTextPaint.setColor(mTimeTextColor);
-            } else {
-                canvas.drawText(mDayText, mDayTextCenterX, mTimeTextBaseY, mTimeTextPaint);
             }
 
             if (mSuffixDayTextWidth > 0) {
