@@ -37,11 +37,7 @@ final class Utils {
                 retMillisecondStr = String.valueOf(millisecond);
             }
         } else {
-            if (millisecond > 99) {
-                retMillisecondStr = String.valueOf(millisecond / 100);
-            } else {
-                retMillisecondStr = "0";
-            }
+            retMillisecondStr = String.valueOf(millisecond / 100);
         }
 
         return retMillisecondStr;
