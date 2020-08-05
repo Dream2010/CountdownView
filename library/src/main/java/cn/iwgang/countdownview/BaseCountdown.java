@@ -17,7 +17,12 @@ class BaseCountdown {
     private static final String DEFAULT_SUFFIX = ":";
     private static final float DEFAULT_SUFFIX_LR_MARGIN = 3; // dp
 
+    public static final int MILLISECOND_DIGITS_ONE = 1;
+    public static final int MILLISECOND_DIGITS_TWO = 2;
+
+
     public int mDay, mHour, mMinute, mSecond, mMillisecond;
+    public int mMillisecondDigits;
     public boolean isShowDay, isShowHour, isShowMinute, isShowSecond, isShowMillisecond;
 
     public boolean isConvertDaysToHours;
@@ -93,6 +98,8 @@ class BaseCountdown {
 
         mHasSetIsShowDay = ta.hasValue(R.styleable.CountdownView_isShowDay);
         mHasSetIsShowHour = ta.hasValue(R.styleable.CountdownView_isShowHour);
+
+        mMillisecondDigits = ta.getInt(R.styleable.CountdownView_timeMillisecondDigits, MILLISECOND_DIGITS_TWO);
 
         initTempSuffixMargin();
 
@@ -593,7 +600,7 @@ class BaseCountdown {
                 // millisecond left point
                 float mMillisecondLeft = mSecondLeft + mTimeTextWidth + mSuffixSecondTextWidth + mSuffixSecondLeftMargin + mSuffixSecondRightMargin;
                 // draw millisecond text
-                canvas.drawText(Utils.formatMillisecond(mMillisecond), mMillisecondLeft + mTimeTextWidth / 2, mTimeTextBaseline, mTimeTextPaint);
+                canvas.drawText(Utils.formatMillisecond(mMillisecond, mMillisecondDigits), mMillisecondLeft + mTimeTextWidth / 2, mTimeTextBaseline, mTimeTextPaint);
                 if (mSuffixMillisecondTextWidth > 0) {
                     // draw millisecond suffix
                     canvas.drawText(mSuffixMillisecond, mMillisecondLeft + mTimeTextWidth + mSuffixMillisecondLeftMargin, mSuffixMillisecondTextBaseline, mSuffixTextPaint);

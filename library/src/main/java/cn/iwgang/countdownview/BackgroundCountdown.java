@@ -446,7 +446,7 @@ class BackgroundCountdown extends BaseCountdown {
                     }
                 }
                 // draw millisecond text
-                canvas.drawText(Utils.formatMillisecond(mMillisecond), mMillisecondBgRectF.centerX(), mTimeTextBaseY, mTimeTextPaint);
+                canvas.drawText(Utils.formatMillisecond(mMillisecond, mMillisecondDigits), mMillisecondBgRectF.centerX(), mTimeTextBaseY, mTimeTextPaint);
                 if (mSuffixMillisecondTextWidth > 0) {
                     // draw millisecond suffix
                     canvas.drawText(mSuffixMillisecond, mMillisecondLeft + mTimeBgSize + mSuffixMillisecondLeftMargin + (mTimeBgBorderSize * 2), mSuffixMillisecondTextBaseline, mSuffixTextPaint);

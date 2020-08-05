@@ -1,6 +1,7 @@
 package cn.iwgang.countdownview;
 
 import android.content.Context;
+import android.util.Log;
 
 /**
  * Utils
@@ -25,15 +26,24 @@ final class Utils {
         return time < 10 ? "0" + time : String.valueOf(time);
     }
 
-    public static String formatMillisecond(int millisecond) {
+    public static String formatMillisecond(int millisecond, int digits) {
         String retMillisecondStr;
 
-        if (millisecond > 99) {
-            retMillisecondStr = String.valueOf(millisecond / 10);
-        } else if (millisecond <= 9) {
-            retMillisecondStr = "0" + millisecond;
+        if (digits == BaseCountdown.MILLISECOND_DIGITS_TWO) {
+            if (millisecond > 99) {
+                retMillisecondStr = String.valueOf(millisecond / 10);
+            } else if (millisecond <= 9) {
+                retMillisecondStr = "0" + millisecond;
+            } else {
+                retMillisecondStr = String.valueOf(millisecond);
+            }
         } else {
-            retMillisecondStr = String.valueOf(millisecond);
+            if (millisecond > 99) {
+                retMillisecondStr = String.valueOf(millisecond / 100);
+            } else {
+                retMillisecondStr = "0";
+            }
+            Log.e("-->", retMillisecondStr);
         }
 
         return retMillisecondStr;

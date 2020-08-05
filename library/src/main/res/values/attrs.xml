@@ -21,6 +21,11 @@
         <attr name="isShowMillisecond" format="boolean" />
         <attr name="isConvertDaysToHours" format="boolean" />
 
+        <attr name="timeMillisecondDigits" format="enum">
+            <enum name="d1" value="1" />
+            <enum name="d2" value="2" />
+        </attr>
+
         <attr name="isSuffixTextBold" format="boolean" />
         <attr name="suffixTextSize" format="dimension" />
         <attr name="suffixTextColor" format="color" />

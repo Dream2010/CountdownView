@@ -118,7 +118,11 @@ public class CountdownView extends View {
 
         long countDownInterval;
         if (mCountdown.isShowMillisecond) {
-            countDownInterval = 10;
+            if (mCountdown.mMillisecondDigits == BaseCountdown.MILLISECOND_DIGITS_TWO) {
+                countDownInterval = 10;
+            } else {
+                countDownInterval = 100;
+            }
             updateShow(millisecond);
         } else {
             countDownInterval = 1000;
