@@ -732,6 +732,11 @@ class BaseCountdown {
             } else if (isDayLargeNinetyNine && mDay <= 99) {
                 isDayLargeNinetyNine = false;
                 isReLayout = true;
+            } else {
+                if (mDay == 0) {
+                    isShowDay = false;
+                    isReLayout = true;
+                }
             }
         }
         return isReLayout;
