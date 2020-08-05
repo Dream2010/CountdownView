@@ -1,7 +1,6 @@
 package cn.iwgang.countdownview;
 
 import android.content.Context;
-import android.util.Log;
 
 /**
  * Utils
@@ -43,7 +42,6 @@ final class Utils {
             } else {
                 retMillisecondStr = "0";
             }
-            Log.e("-->", retMillisecondStr);
         }
 
         return retMillisecondStr;
