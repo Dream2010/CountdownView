@@ -1,4 +1,6 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.github.dcendents.android-maven'
+group='com.github.Dream2010'
 
 android {
     compileSdkVersion 28
@@ -20,6 +22,5 @@ android {
 }
 
 dependencies {
-}
 
-apply from: './build_push_maven.gradle'
+}
