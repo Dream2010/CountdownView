@@ -286,6 +286,14 @@ class BackgroundCountdown extends BaseCountdown {
                 width += mDayTimeBgWidth;
             } else {
                 mDayTimeBgWidth = mTimeBgSize;
+
+                if (isShowTimeBgBorder && !isShowDayTimeBgBorder) {
+                    Rect rect = new Rect();
+                    String tempDay = String.valueOf(mDay);
+                    mTimeTextPaint.getTextBounds(tempDay, 0, tempDay.length(), rect);
+                    mDayTimeBgWidth = rect.width() + Utils.dp2px(mContext, 2);
+                }
+
                 width += mTimeBgSize;
             }
 
@@ -322,7 +330,7 @@ class BackgroundCountdown extends BaseCountdown {
             if (isShowTimeBgBorder) {
                 if (isShowDayTimeBgBorder) {
                     canvas.drawRoundRect(mDayBgBorderRectF, mTimeBgBorderRadius, mTimeBgBorderRadius, mTimeBgBorderPaint);
-                 } else {
+                } else {
                     mDayText = String.valueOf(mDay);
                     mDayTextCenterX = mDayBgRectF.right - mDayText.length() * (mTimeTextWidth / 2) * 0.5f;
                 }
