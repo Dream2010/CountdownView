@@ -286,15 +286,15 @@ class BackgroundCountdown extends BaseCountdown {
                 width += mDayTimeBgWidth;
             } else {
                 mDayTimeBgWidth = mTimeBgSize;
-
                 if (isShowTimeBgBorder && !isShowDayTimeBgBorder) {
                     Rect rect = new Rect();
                     String tempDay = String.valueOf(mDay);
                     mTimeTextPaint.getTextBounds(tempDay, 0, tempDay.length(), rect);
-                    mDayTimeBgWidth = rect.width() + Utils.dp2px(mContext, 2);
+                    mDayTimeBgWidth = rect.width() + Utils.dp2px(mContext, 4);
+                    width += mDayTimeBgWidth;
+                } else {
+                    width += mTimeBgSize;
                 }
-
-                width += mTimeBgSize;
             }
 
             width += (mTimeBgBorderSize * 2);
